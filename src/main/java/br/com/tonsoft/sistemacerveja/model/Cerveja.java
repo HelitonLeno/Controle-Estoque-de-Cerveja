@@ -3,6 +3,7 @@ package br.com.tonsoft.sistemacerveja.model;
 import org.hibernate.validator.constraints.NotBlank;
 
 import javax.persistence.*;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -16,6 +17,7 @@ public class Cerveja implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long codigo;
 
+    @Pattern(regexp = "([a-zA-Z]{2}\\d{4})?", message = "Padrão nome SKU: XX9999")
     @NotBlank(message = "SKU é obrigatório")
     private String sku;
 
@@ -27,7 +29,9 @@ public class Cerveja implements Serializable {
 
     private BigDecimal valor;
     private BigDecimal comissao;
-    private String sabor;
+
+    @Enumerated(EnumType.STRING)
+    private Sabor sabor;
 
     @Column(name = "teor_alcoolico")
     private BigDecimal teorAlcoolico;
@@ -35,6 +39,7 @@ public class Cerveja implements Serializable {
     @Column(name = "quantidade_estoque")
     private Integer quantidadeEstoque;
 
+    @Enumerated(EnumType.STRING)
     private Origem origem;
 
     @ManyToOne
@@ -100,11 +105,11 @@ public class Cerveja implements Serializable {
         this.quantidadeEstoque = quantidadeEstoque;
     }
 
-    public String getSabor() {
+    public Sabor getSabor() {
         return sabor;
     }
 
-    public void setSabor(String sabor) {
+    public void setSabor(Sabor sabor) {
         this.sabor = sabor;
     }
 

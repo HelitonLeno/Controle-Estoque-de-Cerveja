@@ -1,27 +1,27 @@
 CREATE TABLE `estilo` (
   `codigo` BIGINT(20) PRIMARY KEY NOT NULL AUTO_INCREMENT,
-  `nome`   VARCHAR(255)           NOT NULL
+  `nome`   VARCHAR(255)                    DEFAULT NULL
 )
   ENGINE = InnoDB
   DEFAULT CHARSET = utf8;
 
-
 CREATE TABLE `cerveja` (
   `codigo`             BIGINT(20) PRIMARY KEY NOT NULL AUTO_INCREMENT,
-  `comissao`           DECIMAL(10, 2)                  DEFAULT NULL,
-  `descricao`          VARCHAR(100)                    DEFAULT NULL,
-  `nome`               VARCHAR(60)            NOT NULL,
-  `origem`             INT(11)                         DEFAULT NULL,
+  `comissao`           DECIMAL(19, 2)                  DEFAULT NULL,
+  `descricao`          VARCHAR(50)                     DEFAULT NULL,
+  `nome`               VARCHAR(255)           NOT NULL,
+  `origem`             VARCHAR(255)                    DEFAULT NULL,
   `quantidade_estoque` INT(11)                         DEFAULT NULL,
   `sabor`              VARCHAR(255)                    DEFAULT NULL,
-  `sku`                VARCHAR(60)            NOT NULL,
-  `teor_alcoolico`     DECIMAL(10, 2)                  DEFAULT NULL,
-  `valor`              DECIMAL(10, 2)                  DEFAULT NULL,
+  `sku`                VARCHAR(255)           NOT NULL,
+  `teor_alcoolico`     DECIMAL(19, 2)                  DEFAULT NULL,
+  `valor`              DECIMAL(19, 2)                  DEFAULT NULL,
   `codigo_estilo`      BIGINT(20)                      DEFAULT NULL,
   FOREIGN KEY (`codigo_estilo`) REFERENCES `estilo` (`codigo`)
 )
   ENGINE = InnoDB
   DEFAULT CHARSET = utf8
+
 
 
 
