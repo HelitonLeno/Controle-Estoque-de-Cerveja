@@ -1,14 +1,14 @@
-package br.com.tonsoft.sistemacerveja.endpoint;
+package br.com.tonsoft.sistemacerveja.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class ClientesController {
+public class UsuariosController {
 
-	@RequestMapping("/clientes/novo")
+	@RequestMapping("/usuarios/novo")
 	public String novo() {
-		return "cliente/CadastroCliente";
+		return "usuario/CadastroUsuario";
 	}
 	
 }

@@ -1,7 +1,6 @@
-package br.com.tonsoft.sistemacerveja.endpoint;
+package br.com.tonsoft.sistemacerveja.controller;
 
 import br.com.tonsoft.sistemacerveja.model.Cerveja;
-import br.com.tonsoft.sistemacerveja.model.Estilo;
 import br.com.tonsoft.sistemacerveja.model.Origem;
 import br.com.tonsoft.sistemacerveja.model.Sabor;
 import br.com.tonsoft.sistemacerveja.repository.CervejaRepository;
@@ -10,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
